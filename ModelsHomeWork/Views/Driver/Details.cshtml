@@ -1,0 +1,43 @@
+﻿@model Driver
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h3>
+            You in a Driver page
+        </h3>
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="Car">To Cars list</a>
+    </div>
+    
+    
+    <h2>
+        This is @Model.Name
+    </h2>
+    <div>
+        He is come to this world in @Model.Birthday.Year 
+    </div>
+    
+    <p>Car List</p>
+    <ol>
+        @foreach (var car in Model.Cars)
+        {
+            <li>
+                <div>
+                    <p>Type: @car.TypeOfCar</p>
+                    <p>Color: @car.Color</p>
+                    <p>License Plate: @car.LicensePlate</p>
+                </div>
+            </li>
+        }
+    </ol>
+    <a asp-controller="Car" asp-action="Add" asp-route-id="@Model.Id">Add Car</a>
+
+</body>
+</html>

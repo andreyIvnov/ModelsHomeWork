@@ -1,0 +1,30 @@
+﻿@model IList<ModelsHomeWork.Models.Driver>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h3>
+            You in a Driver page
+        </h3>
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="Car">To Cars list</a>
+    </div>
+    <br /><br /><br /><br />
+    @foreach (var driver in Model)
+    {
+      <div class="type-name">
+          Driver Name:<a asp-action="Details" asp-route-id="@driver.Id"> @driver.Name </a>
+     </div>
+     <div>
+          Date of Birth: @driver.Birthday
+      </div>
+    }
+</body>
+</html>

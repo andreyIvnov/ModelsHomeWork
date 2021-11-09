@@ -1,0 +1,28 @@
+﻿@model Car
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h3>
+            You in a Car page
+        </h3>
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="Driver">To Drivers list</a>
+    </div>
+    <h2>
+        This is @Model.TypeOfCar
+    </h2>
+    <div>
+        His color is @Model.Color
+    </div>
+    <div>
+        The License Plate: @Model.LicensePlate
+    </div>
+</body>
+</html>

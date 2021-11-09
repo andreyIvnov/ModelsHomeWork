@@ -1,0 +1,34 @@
+﻿@model IList<ModelsHomeWork.Models.Car>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h3>
+            You in a Car page
+        </h3>
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="Driver">To Drivers list</a>
+    </div>
+    <br /><br /><br />
+    @foreach (var car in Model)
+    {
+        <div class="type-name">
+            Car type is: @car.TypeOfCar
+            @*Car type is: <a asp-action="Details" asp-controller="Driver" asp-route-id="@car.DriverId">@car.TypeOfCar</a>*@
+        </div>
+        <div>
+            His color: @car.Color
+        </div>
+        <div>
+            License Plate: @car.LicensePlate
+        </div>
+    }
+</body>
+</html>
